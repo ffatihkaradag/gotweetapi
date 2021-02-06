@@ -14,6 +14,10 @@ var myTweets = []models.Tweet{myFirstTweet}
 
 type TweetController struct{}
 
+func (tweet TweetController) Home(context *gin.Context) {
+	context.JSON(http.StatusNotFound, gin.H{"author": "Fatih Karadağ"})
+}
+
 func (tweet TweetController) Get(context *gin.Context) {
 	context.JSON(http.StatusOK, myTweets)
 }

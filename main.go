@@ -9,6 +9,8 @@ import (
 func main() {
 	app := gin.Default()
 	var tweetController controllers.TweetController
+
+	app.GET("/", tweetController.Home)
 	app.GET("/tweet", tweetController.Get)
 	app.GET("/tweet/:id", tweetController.GetById)
 	app.POST("/tweet", tweetController.Post)
